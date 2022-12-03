@@ -1,0 +1,7 @@
+{
+	"id": "devtools",
+	"version": "0.1.0",
+	"name": "devtools",
+	"description": "dev tools install FZF, setup ZSH and install p10k for powerfull terminal use",
+	"options": {}
+}
