@@ -1,7 +1,34 @@
 {
 	"id": "devtools",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"name": "devtools",
 	"description": "dev tools install FZF, setup ZSH and install p10k for powerfull terminal use",
-	"options": {}
+	"options": {},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "bash",
+						"icon": "terminal-bash"
+					},
+					"zsh": {
+						"path": "zsh",
+						"icon": "terminal-linux"
+					}
+				},
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	},
+	"mounts": [
+		{
+			"source": "devcontainer-shellhistory",
+			"target": "/dc/shellhistory",
+			"type": "volume"
+		}
+	],
+	"installsAfter": [
+		"ghcr.io/devcontainers/features/common-utils"
+	]
 }

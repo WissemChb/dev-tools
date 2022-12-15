@@ -30,9 +30,7 @@ source dev-container-features-test-lib
 # The 'check' command comes from the dev-container-features-test-lib.
 check "fzf folder exist" ls ~/.fzf
 check "oh my zsh folder exist" ls ~/.oh-my-zsh
-check "p10k folder exist" ls ~/powerlevel10k
-check "enable p10k in zsh"  grep "source ~/powerlevel10k/powerlevel10k.zsh-theme" ~/.zshrc
-check "check the .p10k.zsh exist"  ls ~/ | grep '.p10k.zsh'
+check "zsh histroy exist" ls -ld /dc/shellhistory
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
 reportResults
