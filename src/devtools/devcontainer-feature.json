@@ -1,8 +1,8 @@
 {
 	"id": "devtools",
-	"version": "0.2.0",
+	"version": "0.1.0",
 	"name": "devtools",
-	"description": "dev tools install FZF, setup ZSH and install p10k for powerfull terminal use",
+	"description": "Preinstall devcontainer and setup dev prerequisites",
 	"options": {},
 	"customizations": {
 		"vscode": {
@@ -18,7 +18,11 @@
 					}
 				},
 				"terminal.integrated.defaultProfile.linux": "zsh"
-			}
+			},
+			"extensions": [
+				"mads-hartmann.bash-ide-vscode",
+				"docsmsft.docs-yaml"
+			]
 		}
 	},
 	"mounts": [

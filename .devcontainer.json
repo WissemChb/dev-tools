@@ -1,0 +1,16 @@
+{
+	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18-bullseye",
+	"remoteUser": "",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mads-hartmann.bash-ide-vscode"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+	"postCreateCommand": "npm install -g @devcontainers/cli",
+	"postStartCommand": "cat ~/.gitconfig |grep '\\[safe\\]' > /dev/null 2>&1 || printf '[safe]\n\tdirectory = ${containerWorkspaceFolder}\n' >> ~/.gitconfig"
+}
