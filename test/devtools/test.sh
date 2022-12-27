@@ -31,6 +31,8 @@ source dev-container-features-test-lib
 check "fzf folder exist" ls ~/.fzf
 check "oh my zsh folder exist" ls ~/.oh-my-zsh
 check "zsh histroy exist" ls -ld /dc/shellhistory
+check "zsh-autosggestion exist" ls -ld ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+check "zsh plugins is added" cat ~/.zshrc | grep "plugins=("
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
 reportResults

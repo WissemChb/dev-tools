@@ -1,9 +1,15 @@
 {
 	"id": "devtools",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"name": "devtools",
 	"description": "Preinstall devcontainer and setup dev prerequisites",
-	"options": {},
+	"options": {
+		"zsh_plugins": {
+			"type": "string",
+			"description": "The ZSH plugins used to enhance commands running",
+			"default": ""
+		}
+	},
 	"customizations": {
 		"vscode": {
 			"settings": {
@@ -21,7 +27,8 @@
 			},
 			"extensions": [
 				"mads-hartmann.bash-ide-vscode",
-				"docsmsft.docs-yaml"
+				"docsmsft.docs-yaml",
+				"eamodio.gitlens"
 			]
 		}
 	},
