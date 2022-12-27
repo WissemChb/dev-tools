@@ -1,6 +1,6 @@
 {
 	"id": "devtools",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"name": "devtools",
 	"description": "Preinstall devcontainer and setup dev prerequisites",
 	"options": {
