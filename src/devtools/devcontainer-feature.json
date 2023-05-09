@@ -1,8 +1,8 @@
 {
 	"id": "devtools",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"name": "devtools",
-	"description": "Preinstall devcontainer and setup dev prerequisites",
+	"description": "Preinstall devcontainer and setup dev prerequisites for cloud native and SRE environments",
 	"options": {
 		"zsh_plugins": {
 			"type": "string",
@@ -28,7 +28,16 @@
 			"extensions": [
 				"mads-hartmann.bash-ide-vscode",
 				"docsmsft.docs-yaml",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"donjayamanne.githistory",
+				"GitHub.vscode-pull-request-github",
+				"codezombiech.gitignore",
+				"bierner.github-markdown-preview",
+				"github.vscode-github-actions",
+				"GitHub.remotehub",
+				"TeamHub.teamhub",
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"sourcegraph.sourcegraph"
 			]
 		}
 	},
@@ -37,6 +46,16 @@
 			"source": "devcontainer-shellhistory",
 			"target": "/dc/shellhistory",
 			"type": "volume"
+		},
+		{
+			"source": "${env:HOME}${env:USERPROFILE}/.aws",
+			"target": "/home/vscode/.aws",
+			"type": "bind"
+		},
+		{
+			"source": "${env:HOME}${env:USERPROFILE}/.kube",
+			"target": "/home/vscode/.kube",
+			"type": "bind"
 		}
 	],
 	"installsAfter": [
