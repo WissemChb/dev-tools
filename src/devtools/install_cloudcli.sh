@@ -3,7 +3,7 @@
 set -xe
 
 
-if [ $AWS == "false" ]
+if [ $AWS == "true" ]
 then
 	# Install AWS cli
 	if [ ! -z $AWS_VERSION ]
