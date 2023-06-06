@@ -20,7 +20,13 @@ install_pkg(){
 	fi
 }
 
-install_pkg curl git jq python3 python3-pip
+install_pkg curl git jq python3 openssl tar
+
+
+# Install pip
+curl -OL https://bootstrap.pypa.io/get-pip.py --output-dir /tmp
+command -v python3 > /dev/null 2>&1 &&  ln -s $(command -v python3) /usr/local/bin/python
+python /tmp/get-pip.py
 
 #############################################################################################################################################
 ##################################################### Global configuration ##################################################################

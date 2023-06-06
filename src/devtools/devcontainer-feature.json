@@ -58,12 +58,7 @@
 						"icon": "terminal-linux"
 					}
 				},
-				"terminal.integrated.defaultProfile.linux": "zsh",
-				// "terminal.integrated.env.linux": {
-				// 	"TERM": "",
-				// 	"COLORTERM": "",
-				// 	"LC_ALL": "C.UTF-8"
-				// }
+				"terminal.integrated.defaultProfile.linux": "zsh"
 			},
 			"extensions": [
 				"mads-hartmann.bash-ide-vscode",
@@ -92,16 +87,6 @@
 			"target": "/dc/shellhistory",
 			"type": "volume"
 		}
-		// {
-		// 	"source": "${env:HOME}${env:USERPROFILE}/.aws",
-		// 	"target": "/home/vscode/.aws",
-		// 	"type": "bind"
-		// },
-		// {
-		// 	"source": "${env:HOME}${env:USERPROFILE}/.kube",
-		// 	"target": "/tmp/.kube",
-		// 	"type": "bind"
-		// }
 	],
 	"installsAfter": [
 		"ghcr.io/devcontainers/features/common-utils"
