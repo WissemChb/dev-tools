@@ -14,7 +14,6 @@ jobs:
         baseImage:
           - "mcr.microsoft.com/devcontainers/base:ubuntu"
           - "mcr.microsoft.com/vscode/devcontainers/base:alpine"
-          - "mcr.microsoft.com/vscode/devcontainers/base:debian"
     steps:
       - uses: actions/checkout@v2
 
