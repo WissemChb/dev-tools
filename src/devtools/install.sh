@@ -65,13 +65,13 @@ sed -i -re "s/(plugins=\(git)(\))/\1 $ALL_ZSH_PLUGINS\2/" "$_REMOTE_USER_HOME"/.
 #############################################################################################################################################
 
 # Install Powerlevel10k zsh theme
-if [ ! -z $P10K ]
+if [ "$P10K" == "true" ]
 then
   bash p10k.sh
 fi
 
 # Install Cloud Native tools
-if [ ! -z $CN ]
+if [ "$CN" == "true" ]
 then
   bash setup_cntools.sh
 fi
