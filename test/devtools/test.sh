@@ -33,6 +33,19 @@ check "oh my zsh folder exist" ls ~/.oh-my-zsh
 check "zsh histroy exist" ls -ld /dc/shellhistory
 check "zsh-autosggestion exist" ls -ld ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 check "zsh plugins are added" cat ~/.zshrc | grep "plugins=("
+check "pk10 theme file exist" ls ~/.p10k.zsh ~/powerlevel10k
+check "powerlevel10 enabled on zsh" cat ~/.zshrc | grep "source ~/powerlevel10k/powerlevel10k.zsh-theme"
+check "kubectl is well installed" kubectl version --client
+# check "check krew PATH well added on shell"  cat ~/.zshrc | grep "/.krew"
+# check "kubectl krew plugin manager is well installed" kubectl krew version
+
+check "clium cli is well installed" command -v cilium
+check "helm is well installed" command -v helm
+check "flux cli is well installed" command -v flux
+
+# check "AWS cli is well installed" command -v aws
+# check "AWS shell is well installed" command -v aws-shell
+
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
 reportResults
