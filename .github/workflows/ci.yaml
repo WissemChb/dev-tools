@@ -5,7 +5,22 @@ on:
       - "**"
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Validate Feature"
+        uses: devcontainers/action@v1
+        with:
+          validate-only: "true"
+          publish-features: "false"
+          base-path-to-features: "./src"
+          generate-docs: "false"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   test:
+    needs: validate
     runs-on: ubuntu-latest
     strategy:
       matrix:
