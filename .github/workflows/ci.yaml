@@ -22,3 +22,13 @@ jobs:
 
       - name: "Generating tests for '${{ matrix.features }}' against '${{ matrix.baseImage }}'"
         run: devcontainer features test -f ${{ matrix.features }} -i ${{ matrix.baseImage }} .
+
+      - name: "Validate Features"
+        uses: devcontainers/action@v1
+        with:
+          validate-only: "true"
+          publish-features: "false"
+          base-path-to-features: "./src"
+          generate-docs: "false"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

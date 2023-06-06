@@ -25,17 +25,17 @@
 			"default": "latest"
 		},
 		"p10k": {
-			"type": "bool",
+			"type": "boolean",
 			"description": "Enable p10k installation",
 			"default": true
 		},
 		"cn": {
-			"type": "bool",
+			"type": "boolean",
 			"description": "The installation of Cloud Native plugin",
 			"default": true
 		},
 		"aws": {
-			"type": "bool",
+			"type": "boolean",
 			"description": "The installation of AWS Cloud",
 			"default": false
 		},
