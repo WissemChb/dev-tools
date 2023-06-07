@@ -7,7 +7,7 @@ Preinstall devcontainer and setup dev prerequisites for cloud native and SRE env
 
 ```json
 "features": {
-    "ghcr.io/WissemChb/dev-tools/devtools:0": {}
+    "ghcr.io/WissemChb/dev-tools/devtools:1": {}
 }
 ```
 
