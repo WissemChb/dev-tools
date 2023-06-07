@@ -1,94 +1,94 @@
 {
-	"id": "devtools",
-	"version": "0.3.1",
-	"name": "devtools",
-	"description": "Preinstall devcontainer and setup dev prerequisites for cloud native and SRE environments",
-	"options": {
-		"zsh_plugins": {
-			"type": "string",
-			"description": "The ZSH plugins used to enhance commands running",
-			"default": ""
-		},
-		"kubectl_plugins": {
-			"type": "string",
-			"description": "The kubectl plugins used to enhance operations on the cluster",
-			"default": ""
-		},
-		"kubectl_version": {
-			"type": "string",
-			"description": "The kubectl version",
-			"default": "latest"
-		},
-		"gloo_version": {
-			"type": "string",
-			"description": "The Gloo CTL version",
-			"default": "latest"
-		},
-		"p10k": {
-			"type": "boolean",
-			"description": "Enable p10k installation",
-			"default": true
-		},
-		"cn": {
-			"type": "boolean",
-			"description": "The installation of Cloud Native plugin",
-			"default": true
-		},
-		"aws": {
-			"type": "boolean",
-			"description": "The installation of AWS Cloud",
-			"default": false
-		},
-		"aws_version": {
-			"type": "string",
-			"description": "AWS CLI version",
-			"default": ""
-		}
-	},
-	"customizations": {
-		"vscode": {
-			"settings": {
-				"terminal.integrated.profiles.linux": {
-					"bash": {
-						"path": "bash",
-						"icon": "terminal-bash"
-					},
-					"zsh": {
-						"path": "zsh",
-						"icon": "terminal-linux"
-					}
-				},
-				"terminal.integrated.defaultProfile.linux": "zsh"
-			},
-			"extensions": [
-				"mads-hartmann.bash-ide-vscode",
-				"docsmsft.docs-yaml",
-				"eamodio.gitlens",
-				"donjayamanne.githistory",
-				"GitHub.vscode-pull-request-github",
-				"codezombiech.gitignore",
-				"bierner.github-markdown-preview",
-				"github.vscode-github-actions",
-				"GitHub.remotehub",
-				"TeamHub.teamhub",
-				"ms-kubernetes-tools.vscode-kubernetes-tools",
-				"sourcegraph.sourcegraph"
-			]
-		}
-	},
-	"containerEnv": {
-		"TERM": "",
-		"COLORTERM": "",
-		"LC_ALL": "C.UTF-8"
-	},
-	"mounts": [
-		{
-			"source": "devcontainer-shellhistory",
-			"target": "/dc/shellhistory",
-			"type": "volume"
-		}
-	],
-	"installsAfter": [
-		"ghcr.io/devcontainers/features/common-utils"
-	]
+  "id": "devtools",
+  "version": "1.0.0",
+  "name": "devtools",
+  "description": "Preinstall devcontainer and setup dev prerequisites for cloud native and SRE environments",
+  "options": {
+    "zsh_plugins": {
+      "type": "string",
+      "description": "The ZSH plugins used to enhance commands running",
+      "default": ""
+    },
+    "kubectl_plugins": {
+      "type": "string",
+      "description": "The kubectl plugins used to enhance operations on the cluster",
+      "default": ""
+    },
+    "kubectl_version": {
+      "type": "string",
+      "description": "The kubectl version",
+      "default": "latest"
+    },
+    "gloo_version": {
+      "type": "string",
+      "description": "The Gloo CTL version",
+      "default": "latest"
+    },
+    "p10k": {
+      "type": "boolean",
+      "description": "Enable p10k installation",
+      "default": true
+    },
+    "cn": {
+      "type": "boolean",
+      "description": "The installation of Cloud Native plugin",
+      "default": true
+    },
+    "aws": {
+      "type": "boolean",
+      "description": "The installation of AWS Cloud",
+      "default": false
+    },
+    "aws_version": {
+      "type": "string",
+      "description": "AWS CLI version",
+      "default": ""
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh",
+            "icon": "terminal-linux"
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
+      "extensions": [
+        "mads-hartmann.bash-ide-vscode",
+        "docsmsft.docs-yaml",
+        "eamodio.gitlens",
+        "donjayamanne.githistory",
+        "GitHub.vscode-pull-request-github",
+        "codezombiech.gitignore",
+        "bierner.github-markdown-preview",
+        "github.vscode-github-actions",
+        "GitHub.remotehub",
+        "TeamHub.teamhub",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "sourcegraph.sourcegraph"
+      ]
+    }
+  },
+  "containerEnv": {
+    "TERM": "",
+    "COLORTERM": "",
+    "LC_ALL": "C.UTF-8"
+  },
+  "mounts": [
+    {
+      "source": "devcontainer-shellhistory",
+      "target": "/dc/shellhistory",
+      "type": "volume"
+    }
+  ],
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
 }

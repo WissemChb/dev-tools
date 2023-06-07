@@ -10,7 +10,7 @@ then
 	then
 		VERSION=-$AWS_VERSION
 	fi
-	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64$VERSION.zip" -o "awscliv2.zip"
+	curl "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m)$VERSION.zip" -o "awscliv2.zip"
 	unzip awscliv2.zip
 	sudo ./aws/install
 
