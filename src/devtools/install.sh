@@ -2,6 +2,11 @@
 
 set -e
 
+
+# Get the ARCH AND OS
+export OS=$(uname | tr '[:upper:]' '[:lower:]')
+export ARCH=$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')
+
 # Install packages
 install_pkg(){
 	if command -v apt > /dev/null 2>&1

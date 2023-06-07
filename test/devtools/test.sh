@@ -16,10 +16,10 @@
 # For the 'hello' feature, that means the default favorite greeting is 'hey'.
 #
 # These scripts are run as 'root' by default. Although that can be changed
-# with the --remote-user flag.
-#
-# This test can be run with the following command (from the root of this repo)
-#    devcontainer features test --features devtools --base-image mcr.microsoft.com/devcontainers/base:ubuntu .
+	# with the --remote-user flag.
+	#
+	# This test can be run with the following command (from the root of this repo)
+	#    devcontainer features test --features devtools --base-image mcr.microsoft.com/devcontainers/base:ubuntu .
 
 set -e
 
@@ -36,8 +36,12 @@ check "zsh plugins are added" cat ~/.zshrc | grep "plugins=("
 check "pk10 theme file exist" ls ~/.p10k.zsh ~/powerlevel10k
 check "powerlevel10 enabled on zsh" cat ~/.zshrc | grep "source ~/powerlevel10k/powerlevel10k.zsh-theme"
 check "kubectl is well installed" kubectl version --client
-# check "check krew PATH well added on shell"  cat ~/.zshrc | grep "/.krew"
-# check "kubectl krew plugin manager is well installed" kubectl krew version
+check "check krew PATH well added on shell"  cat ~/.zshrc | grep "/.krew"
+check "kubectl krew plugin manager is well installed" . ~/.bashrc && kubectl krew version
+check "kubectl stern plugin is well installed" . ~/.bashrc && kubectl stern -v
+check "kubectl fuzzy plugin is well installed" . ~/.bashrc && kubectl fuzzy version
+check "kubectl images plugin is well installed" . ~/.bashrc && kubectl images --version
+check "kubectl iexec plugin is well installed" . ~/.bashrc && kubectl iexec --help
 
 check "clium cli is well installed" command -v cilium
 check "helm is well installed" command -v helm

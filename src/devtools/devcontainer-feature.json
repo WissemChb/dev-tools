@@ -1,6 +1,6 @@
 {
 	"id": "devtools",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"name": "devtools",
 	"description": "Preinstall devcontainer and setup dev prerequisites for cloud native and SRE environments",
 	"options": {
