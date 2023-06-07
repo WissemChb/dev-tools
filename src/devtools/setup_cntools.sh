@@ -16,32 +16,11 @@ curl -LO "https://dl.k8s.io/release/${kubectl_version}/bin/linux/amd64/kubectl" 
 chmod +x /usr/local/bin/kubectl
 kubectl completion zsh > ${ZSH:-$_REMOTE_USER_HOME/.oh-my-zsh}/completions/_kubectl
 
-# Install Krew
-OS=$(uname | tr '[:upper:]' '[:lower:]')
-ARCH=$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')
-KREW="krew-${OS}_${ARCH}"
-sudo -H -u $_REMOTE_USER bash -c "set -xe; mkdir $_REMOTE_USER_HOME/.tmp ; cd $_REMOTE_USER_HOME/.tmp && \
-    
-    curl -fsSLO \"https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz\" && \
-    tar zxvf \"${KREW}.tar.gz\" && \
-    chmod +x ./\"${KREW}\"
-    \"./${KREW}\" install krew && \
-    rm -rf $_REMOTE_USER_HOME/.tmp && \
-
-    echo "export PATH=\"${KREW_ROOT:-$_REMOTE_USER_HOME/.krew}/bin:$PATH\"" | tee -a $_REMOTE_USER_HOME/.zshrc $_REMOTE_USER_HOME/.bashrc && \
-
-    . $_REMOTE_USER_HOME/.bashrc && \
-
-    ALL_KUBECTL_PLUGINS="stern fuzzy iexec images ktop $(echo ${KUBECTL_PLUGINS} | tr '[,;|]' ' ' | tr -s " " )" && \
- 
-    kubectl krew update && \
-    kubectl krew install ${ALL_KUBECTL_PLUGINS}
-"
+# # Install Krew
+/bin/su -c "$(pwd)/install_krew.sh ${KUBECTL_PLUGINS}" - $_REMOTE_USER
 
 echo 'alias k=kubectl' | tee -a $_REMOTE_USER_HOME/.zshrc $_REMOTE_USER_HOME/.bashrc 
 echo 'complete -o default -F __start_kubectl k' | tee -a $_REMOTE_USER_HOME/.zshrc $_REMOTE_USER_HOME/.bashrc
-
-
 
 # Install Helm
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
