@@ -12,14 +12,14 @@ install_pkg(){
 	if command -v apt > /dev/null 2>&1
 	then
 		apt update -y
-		apt install -y $@
+		apt install -y $@ python3-pip
 	elif command -v yum > /dev/null 2>&1
 	then
 		yum update -y
 		yum install -y $@
 	elif  command -v apk > /dev/null 2>&1 
 	then
-		apk add $@
+		apk add $@ py3-pip
 	else
 		echo "Linux distribution not supported"
 	fi
@@ -27,11 +27,6 @@ install_pkg(){
 
 install_pkg curl git jq python3 openssl tar
 
-
-# Install pip
-curl -OL https://bootstrap.pypa.io/get-pip.py --output-dir /tmp
-command -v python3 > /dev/null 2>&1 &&  ln -s $(command -v python3) /usr/local/bin/python
-python /tmp/get-pip.py
 
 #############################################################################################################################################
 ##################################################### Global configuration ##################################################################

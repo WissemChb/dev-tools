@@ -22,7 +22,7 @@
     "gloo_version": {
       "type": "string",
       "description": "The Gloo CTL version",
-      "default": "latest"
+      "default": ""
     },
     "p10k": {
       "type": "boolean",
