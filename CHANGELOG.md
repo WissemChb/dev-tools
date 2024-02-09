@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.1](https://github.com/WissemChb/dev-tools/compare/v1.0.0...v1.0.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* make goo install optional ([0bd3fc2](https://github.com/WissemChb/dev-tools/commit/0bd3fc2b7049e1ce6b44ee43866f4d4eb784f057))
+
 # 1.0.0 (2023-06-07)
 
 
